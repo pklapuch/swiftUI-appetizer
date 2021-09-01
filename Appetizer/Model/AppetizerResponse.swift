@@ -23,10 +23,25 @@ struct MockData {
                                            carbs: 1000,
                                            protein: 12)
     
-    static let appetizers = [sampleAppetizer, sampleAppetizer, sampleAppetizer, sampleAppetizer]
     
-//    static let sampleImage: UIImage? {
-//        
-//        return UIImage(name: "asian-flank-steak")
-//    }
+    
+    static let appetizers = [sampleAppetizer.bySetting(id: 1),
+                             sampleAppetizer.bySetting(id: 2),
+                             sampleAppetizer.bySetting(id: 3),
+                             sampleAppetizer.bySetting(id: 4)]
+}
+
+extension Appetizer {
+    
+    func bySetting(id: Int) -> Appetizer {
+        
+        return .init(id: id,
+                     name: name,
+                     description: description,
+                     price: price,
+                     imageURL: imageURL,
+                     calories: calories,
+                     carbs: carbs,
+                     protein: protein)
+    }
 }

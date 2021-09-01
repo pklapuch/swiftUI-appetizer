@@ -13,6 +13,9 @@ final class AppetizerListViewModel: ObservableObject {
     @Published var alertItem: AlertItem?
     @Published private(set) var isLoading = false
     
+    @Published var isShowingDetail = false
+    var selectedDetailAppetizer: Appetizer = MockData.sampleAppetizer
+    
     func getAppetizers() {
         
         isLoading = true
@@ -25,6 +28,12 @@ final class AppetizerListViewModel: ObservableObject {
                 self?.isLoading = false
             })
         }
+    }
+    
+    func showDetail(appetizer: Appetizer) {
+        
+        selectedDetailAppetizer = appetizer
+        isShowingDetail = true // Triggers navigation
     }
 }
 

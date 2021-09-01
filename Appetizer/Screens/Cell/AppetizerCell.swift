@@ -10,7 +10,6 @@ import SwiftUI
 struct AppetizerCell: View {
     
     let appetizer: Appetizer
-    let imageName: String
     
     var body: some View {
         
@@ -37,6 +36,6 @@ struct AppetizerCell: View {
 
 struct AppetizerCell_Previews: PreviewProvider {
     static var previews: some View {
-        AppetizerCell(appetizer: MockData.sampleAppetizer, imageName: "asian-flank-steak")
+        AppetizerCell(appetizer: MockData.sampleAppetizer)
     }
 }
